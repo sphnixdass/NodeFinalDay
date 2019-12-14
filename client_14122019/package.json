@@ -12,6 +12,7 @@
     "chai": "^4.2.0",
     "classnames": "^2.2.6",
     "enzyme": "^3.10.0",
+    "primeflex": "^1.0.0",
     "primeicons": "^2.0.0",
     "primereact": "^3.3.3",
     "prop-types": "^15.7.2",

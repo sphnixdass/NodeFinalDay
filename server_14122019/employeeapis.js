@@ -5,6 +5,7 @@ var http=require('http');
 var dao=require('./dbaccess/connectionHelper')
 var validateUserRef=require('./dbaccess/validateUser');
 var addEmployeeRef=require('./dbaccess/addEmployee')
+var viewEmployeeRef=require('./dbaccess/getAllEmployee');
 //express instance creation
 var app=express();
 //connect app and cors
@@ -36,6 +37,32 @@ app.post("/addEmployee",function(request,response)
     response.end("Record Added.....");
 
 })
+
+app.get("/viewEmployee",function(request,response)
+{
+    // Website you wish to allow to connect
+    response.setHeader('Access-Control-Allow-Origin', '*');
+    // Request methods you wish to allow
+    response.setHeader('Access-Control-Allow-Methods',
+        'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    // Request headers you wish to allow
+    // res.setHeader('Access-Control-Allow-Headers', 'X-Requested-With,content-type');
+    response.header("Access-Control-Allow-Headers",
+        "X-Requested-With, Content-Type");
+    // Set to true if you need the website to include cookies in the requests sent
+    // to the API (e.g. in case you use sessions)
+    response.setHeader('Access-Control-Allow-Credentials', true);
+
+    console.log(request.query);
+    viewEmployeeRef.getAllEmp(request.query.projectId).then(function(data)
+    //getProjectByIdRef.getProjectById(request.query.projectId).then(function(data)
+    {
+        response.send(data);
+    })
+    //response.end("Received....");
+
+})
+
 
 app.post("/login",function(request,response)
 {
