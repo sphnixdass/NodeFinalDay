@@ -1,0 +1,23 @@
+legend
+{
+    text-align: center;
+    font-size: large;
+}
+
+fieldset
+{
+    text-align: center;
+}
+
+.employee
+{
+    width:25%;
+    margin-left:15%;
+
+}
+.growl
+{
+    margin-top: 5%;
+    margin-left: 10%;
+    float:left;
+}

@@ -1,0 +1,18 @@
+{
+  "name": "projectmanagement",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node employeeapis.js"
+  },
+  "author": "Parameswari",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "cors": "^2.8.5",
+    "body-parser": "^1.19.0",
+    "mongodb": "^3.3.5",
+    "mongoose": "4.13.19"
+  }
+}
